@@ -121,20 +121,23 @@ def getRandomWord (wordDict):
     # First, randomly select a key from the dictionary:
     wordKey = random.choice(list(wordDict.keys()))
     #Second, randomly select a word from the key's list in the dictionary:
-    def chooseEasy(wordKey):
-        print('Easy, Medium, Hard')
-    if input().lower().startswith(e):
-        return wordKey[0]
-    elif input().lower().startswith(m):
-        return wordKey[1]
-    elif input().lower().startswith(h):
-        return wordKey[2]
-    else:
-        print('You broke my game!')
     wordIndex = random.randint(0, len(wordDict[wordKey])-1)
     return [wordDict[wordKey][wordIndex], wordKey]
 
-
+def chooseEasy(yourChoice):
+    wordKeyEasy = random.choice(yourChoice['easy'])
+    wordKeyMedium = random.choice(yourChoice['medium'])
+    wordKeyHard = random.choice(yourChoice['hard'])
+    if yourChoice in words['easy']:
+        print (wordKeyEasy)
+        print('Good choice with easy!')
+    elif yourChoice in words['medium']:
+        return [wordKeyMedium]d
+    elif yourChoice in words['hard']:
+        return wordKeyHard
+    else:
+        print('You broke my game!')
+    
 def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
     print(HANGMANPICS[len(missedLetters)])
     print()
@@ -182,7 +185,7 @@ print('Easy Medium or Hard ')
 input()
 missedLetters = ''
 correctLetters = ''
-secretWord, selectDifficulty = chooseEasy(), getRandomWord(words)
+secretWord, selectDifficulty = chooseEasy(words), getRandomWord(words)
 gameIsDone = False
 
 
