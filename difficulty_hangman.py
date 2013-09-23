@@ -132,7 +132,7 @@ def chooseEasy(yourChoice):
         print (wordKeyEasy)
         print('Good choice with easy!')
     elif yourChoice in words['medium']:
-        return [wordKeyMedium]d
+        return [wordKeyMedium]
     elif yourChoice in words['hard']:
         return wordKeyHard
     else:
