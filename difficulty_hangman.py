@@ -116,7 +116,8 @@ words = {'easy':'cat cow sun bug lips coat kite milk hat dog bird boy'.split(),
          'hard':'exponential parody philosopher opaque stockholder archaeologist twang addendum eureka observatory stowaway aristocrat'.split()}
 
 
-def getRandomWord (wordDict):
+def getRandomWord(wordDict):
+	return random.choice(wordDict);
     # This function returns a random string from the passed dictionary of list of strings, and the key also.
     # First, randomly select a key from the dictionary:
     wordKey = random.choice(list(wordDict.keys()))
@@ -182,10 +183,20 @@ def playAgain():
 print('H A N G M A N')
 print('Select the difficulty level: ')
 print('Easy Medium or Hard ')
-input()
+difficultyChoice = input()
+# assuming that difficultyChoice is on eof the proper terms.
+print(words.difficultyChoice)
+secretWord = getRandomWord(words.difficultyChoice)
+
+print(secretWord)
+exit
+
+
+secretWord
+selectDifficulty = chooseEasy(words), getRandomWord(words)
+
 missedLetters = ''
 correctLetters = ''
-secretWord, selectDifficulty = chooseEasy(words), getRandomWord(words)
 gameIsDone = False
 
 
